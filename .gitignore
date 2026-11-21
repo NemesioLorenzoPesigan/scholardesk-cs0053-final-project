@@ -1,0 +1,6 @@
+/data/*
+!/data/.gitkeep
+/docs/evidence/*
+!/docs/evidence/.gitkeep
+/tools/server.pid
+*.log
