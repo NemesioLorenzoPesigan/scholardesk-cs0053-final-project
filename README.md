@@ -68,14 +68,17 @@ Open `START HERE.html` for the documentation index. Includes User Manual, Techni
 
 This folder is its own Git repository, separate from other files on the laptop. The initial commits preserve tests written before the selected domain functions, their implementation, and later application development. The recorded history is actual assisted development; it does not represent five group members making those commits.
 
-No GitHub remote has been created or uploaded. To publish after reviewing the files, create an empty repository in your own GitHub account, then run from this folder:
+GitHub repository: [https://github.com/NemesioLorenzoPesigan/scholardesk-cs0053-final-project](https://github.com/NemesioLorenzoPesigan/scholardesk-cs0053-final-project)
+
+The repository is private. Its source and actual commit history are available to your account; invite your group members and instructor if they need access. No local database or session files are uploaded.
+
+To clone on another laptop:
 
 ```text
-git remote add origin YOUR_REPOSITORY_URL
-git push -u origin codex/scholardesk
+git clone https://github.com/NemesioLorenzoPesigan/scholardesk-cs0053-final-project.git
 ```
 
-Replace `YOUR_REPOSITORY_URL` with the real URL. Do not include the local database or session files. After future changes, stage specific source files and make meaningful commits. Have each member commit their actual contribution from their own account. Enter the real GitHub link and member contributions before submission.
+The GitHub default branch is `main`. This local development branch is `codex/scholardesk` and tracks `origin/main`. After editing and testing, stage specific source files, make a meaningful commit, and use `git push` to upload the changes. Each group member should commit their actual contribution from their own account. Complete the group's real member/contribution details before submission.
 
 ## Scope
 
