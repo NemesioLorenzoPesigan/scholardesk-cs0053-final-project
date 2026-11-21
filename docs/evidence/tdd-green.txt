@@ -1,0 +1,13 @@
+PASS | Student fields are trimmed
+PASS | Student number is required
+PASS | Invalid email is rejected
+PASS | Year must be 1 through 6
+PASS | Fractional year is rejected
+PASS | Required fields reject arrays
+PASS | Task date must be a real date
+PASS | Task accepts a valid leap day
+PASS | Pending is overdue after deadline
+PASS | Due today remains pending
+PASS | Submitted work is submitted after deadline
+
+11 passed; 0 failed

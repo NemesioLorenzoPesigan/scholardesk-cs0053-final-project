@@ -1,0 +1,25 @@
+PASS | Empty dashboard has zero completion
+PASS | Create and retrieve student
+PASS | Search finds student number
+PASS | Search treats SQL characters as literal input
+PASS | Duplicate number rejected
+PASS | Duplicate email rejected
+PASS | Update persists student changes
+PASS | Student-task assignment is automatically pending
+PASS | Past pending deadline is overdue
+PASS | Submit updates completion and clears overdue
+PASS | Repeated submit does not duplicate records
+PASS | Status filter selects submitted work
+PASS | Mark pending reverses submission
+PASS | Missing student cannot submit
+PASS | Unknown submission status rejected
+PASS | Task update and search work
+PASS | Deleting a task cascades submissions
+PASS | Deleting a student cascades submissions
+PASS | Missing record returns not found
+PASS | Demo creates three students and three tasks
+PASS | Demo refuses to overwrite populated database
+PASS | Rejected demo leaves database intact
+PASS | Records persist across database reconnections
+
+23 passed; 0 failed

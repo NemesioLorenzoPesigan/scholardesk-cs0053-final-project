@@ -1,0 +1,7 @@
+$kind: collection
+description: Run in order with ScholarDesk running. Creates temporary fictional test records and deletes only those records. Uses local PHP session cookies and CSRF token.
+variables:
+  base_url: http://127.0.0.1:8053
+  csrf_token: ""
+  student_id: ""
+  task_id: ""

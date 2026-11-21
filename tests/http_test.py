@@ -7,7 +7,6 @@ import os
 from pathlib import Path
 import socket
 import subprocess
-import tempfile
 import time
 import urllib.error
 import urllib.request
@@ -100,7 +99,14 @@ with isolated_database() as temporary:
         verify('DELETE removes task', request(f'tasks&id={tid}','DELETE')[0] == 200)
         verify('DELETE removes student', request(f'students&id={sid}','DELETE')[0] == 200)
         verify('Deleted record is no longer available', request(f'students&id={sid}')[0] == 404)
-        verify('Database file is outside public web root', urllib.request.urlopen(f'http://127.0.0.1:{port}/api.php?route=dashboard').status == 200 and not (root/'public'/'data').exists())
+        try:
+            response = urllib.request.urlopen(f'http://127.0.0.1:{port}/data/scholardesk.sqlite')
+            private_file_status = response.status
+            response.close()
+        except urllib.error.HTTPError as error:
+            private_file_status = error.code
+            error.close()
+        verify('Database file is not accessible over HTTP', private_file_status == 404 and not (root/'public'/'data').exists())
         print(f'\n{checks} passed; 0 failed')
     finally:
         server.terminate()

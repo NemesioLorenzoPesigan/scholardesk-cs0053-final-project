@@ -1,0 +1,13 @@
+$kind: http-request
+url: "{{base_url}}/api.php?route=session"
+method: GET
+headers:
+  Content-Type: application/json
+  X-CSRF-Token: "{{csrf_token}}"
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("HTTP 200", () => pm.response.to.have.status(200));
+      pm.collectionVariables.set("csrf_token", pm.response.json().data.csrf_token);
+    language: text/javascript
+order: 1000

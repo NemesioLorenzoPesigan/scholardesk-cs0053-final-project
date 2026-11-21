@@ -1,0 +1,8 @@
+# Local-only project; no cloud workspace is linked.
+
+
+localResources:
+  collections:
+    - ../docs/ScholarDesk.postman_collection.json
+workspace:
+  id: 1a6f0c34-3507-47a2-8ea2-f5f655108b36

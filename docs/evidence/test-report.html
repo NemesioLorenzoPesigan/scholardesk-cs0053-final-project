@@ -1,0 +1,88 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Actual test results | ScholarDesk</title><link rel="stylesheet" href="../docs.css"></head><body><main><div class="tag">CS0053 · Actual local test output · November 21, 2026</div><h1>Testing that you can inspect.</h1><p class="callout"><b>61 automated checks passed</b> across domain, database, and HTTP layers. Postman separately passed 15 assertions across 9 requests. The original TDD failing run is preserved below.</p><p>This report reproduces the real output files shipped beside this HTML file. It is a report view, not a terminal screenshot.</p><h2>Unit tests: 11 passed</h2><pre>PASS | Student fields are trimmed
+PASS | Student number is required
+PASS | Invalid email is rejected
+PASS | Year must be 1 through 6
+PASS | Fractional year is rejected
+PASS | Required fields reject arrays
+PASS | Task date must be a real date
+PASS | Task accepts a valid leap day
+PASS | Pending is overdue after deadline
+PASS | Due today remains pending
+PASS | Submitted work is submitted after deadline
+
+11 passed; 0 failed
+</pre><h2>Integration tests: 23 passed</h2><pre>PASS | Empty dashboard has zero completion
+PASS | Create and retrieve student
+PASS | Search finds student number
+PASS | Search treats SQL characters as literal input
+PASS | Duplicate number rejected
+PASS | Duplicate email rejected
+PASS | Update persists student changes
+PASS | Student-task assignment is automatically pending
+PASS | Past pending deadline is overdue
+PASS | Submit updates completion and clears overdue
+PASS | Repeated submit does not duplicate records
+PASS | Status filter selects submitted work
+PASS | Mark pending reverses submission
+PASS | Missing student cannot submit
+PASS | Unknown submission status rejected
+PASS | Task update and search work
+PASS | Deleting a task cascades submissions
+PASS | Deleting a student cascades submissions
+PASS | Missing record returns not found
+PASS | Demo creates three students and three tasks
+PASS | Demo refuses to overwrite populated database
+PASS | Rejected demo leaves database intact
+PASS | Records persist across database reconnections
+
+23 passed; 0 failed
+</pre><h2>Black-box HTTP tests: 27 passed</h2><pre>PASS | Session endpoint returns CSRF token
+PASS | Write without CSRF token is blocked
+PASS | Malformed JSON rejected
+PASS | Wrong content type rejected
+PASS | Blank required fields rejected
+PASS | Invalid email rejected
+PASS | POST creates student with 201
+PASS | GET retrieves new student
+PASS | Duplicate student rejected with 409
+PASS | GET search finds student
+PASS | Array query rejected
+PASS | Negative ID rejected
+PASS | Unknown ID returns 404
+PASS | PUT updates student
+PASS | POST creates task with 201
+PASS | PUT updates task
+PASS | GET submissions combines student and task
+PASS | PUT marks task submitted
+PASS | Dashboard reflects submitted work
+PASS | Invalid submission status rejected
+PASS | PUT restores pending status
+PASS | Unsupported method returns 405
+PASS | Unknown endpoint returns 404
+PASS | DELETE removes task
+PASS | DELETE removes student
+PASS | Deleted record is no longer available
+PASS | Database file is not accessible over HTTP
+
+27 passed; 0 failed
+</pre><h2>Postman: 15 assertions passed</h2><pre>Actual Postman desktop run, November 21, 2026, local mode.
+Requests selected: 01 through 09 (9 of 12).
+Assertions: 15 passed, 0 failed, 0 errors.
+Requests 10-12 were not selected in this Postman run.
+Temporary records were cleaned up afterward using direct local API calls.
+DELETE functionality is covered by tests/http_test.py; Postman DELETE screenshots remain a group submission step.
+Screenshot: postman-run.jpg
+</pre><h2>TDD: original failing run</h2><pre>FAIL | Student fields are trimmed | Class &quot;ScholarDesk\Domain\Rules&quot; not found
+FAIL | Student number is required | Class &quot;ScholarDesk\Domain\Rules&quot; not found
+FAIL | Invalid email is rejected | Class &quot;ScholarDesk\Domain\Rules&quot; not found
+FAIL | Year must be 1 through 6 | Class &quot;ScholarDesk\Domain\Rules&quot; not found
+FAIL | Fractional year is rejected | Class &quot;ScholarDesk\Domain\Rules&quot; not found
+FAIL | Required fields reject arrays | Class &quot;ScholarDesk\Domain\Rules&quot; not found
+FAIL | Task date must be a real date | Class &quot;ScholarDesk\Domain\Rules&quot; not found
+FAIL | Task accepts a valid leap day | Class &quot;ScholarDesk\Domain\Rules&quot; not found
+FAIL | Pending is overdue after deadline | Class &quot;ScholarDesk\Domain\Rules&quot; not found
+FAIL | Due today remains pending | Class &quot;ScholarDesk\Domain\Rules&quot; not found
+FAIL | Submitted work is submitted after deadline | Class &quot;ScholarDesk\Domain\Rules&quot; not found
+
+0 passed; 11 failed
+</pre><footer>ScholarDesk local verification. Requests 10–12 were not executed in the Postman UI run.</footer></main></body></html>

@@ -1,0 +1,16 @@
+$kind: http-request
+url: "{{base_url}}/api.php?route=students&id={{student_id}}"
+method: PUT
+headers:
+  Content-Type: application/json
+  X-CSRF-Token: "{{csrf_token}}"
+body:
+  type: json
+  content: '{"student_number": "{{student_number}}", "full_name": "Postman Updated Student", "email": "{{student_email}}", "course": "BSCS", "year_level": 2, "section": "SE31"}'
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("HTTP 200", () => pm.response.to.have.status(200));
+      pm.test("Name updated", () => pm.expect(pm.response.json().data.full_name).to.eql("Postman Updated Student"));
+    language: text/javascript
+order: 4000

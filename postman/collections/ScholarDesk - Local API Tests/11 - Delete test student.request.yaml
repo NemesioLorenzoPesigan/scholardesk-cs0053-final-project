@@ -1,0 +1,11 @@
+$kind: http-request
+url: "{{base_url}}/api.php?route=students&id={{student_id}}"
+method: DELETE
+headers:
+  Content-Type: application/json
+  X-CSRF-Token: "{{csrf_token}}"
+scripts:
+  - type: afterResponse
+    code: pm.test("HTTP 200", () => pm.response.to.have.status(200));
+    language: text/javascript
+order: 11000

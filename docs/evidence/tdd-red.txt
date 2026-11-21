@@ -1,0 +1,13 @@
+FAIL | Student fields are trimmed | Class "ScholarDesk\Domain\Rules" not found
+FAIL | Student number is required | Class "ScholarDesk\Domain\Rules" not found
+FAIL | Invalid email is rejected | Class "ScholarDesk\Domain\Rules" not found
+FAIL | Year must be 1 through 6 | Class "ScholarDesk\Domain\Rules" not found
+FAIL | Fractional year is rejected | Class "ScholarDesk\Domain\Rules" not found
+FAIL | Required fields reject arrays | Class "ScholarDesk\Domain\Rules" not found
+FAIL | Task date must be a real date | Class "ScholarDesk\Domain\Rules" not found
+FAIL | Task accepts a valid leap day | Class "ScholarDesk\Domain\Rules" not found
+FAIL | Pending is overdue after deadline | Class "ScholarDesk\Domain\Rules" not found
+FAIL | Due today remains pending | Class "ScholarDesk\Domain\Rules" not found
+FAIL | Submitted work is submitted after deadline | Class "ScholarDesk\Domain\Rules" not found
+
+0 passed; 11 failed

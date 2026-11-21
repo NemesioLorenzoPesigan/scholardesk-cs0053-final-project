@@ -4,3 +4,5 @@
 !/docs/evidence/.gitkeep
 /tools/server.pid
 *.log
+/.postman/
+/postman/globals/

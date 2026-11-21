@@ -1,0 +1,13 @@
+$kind: http-request
+url: "{{base_url}}/api.php?route=dashboard"
+method: GET
+headers:
+  Content-Type: application/json
+  X-CSRF-Token: "{{csrf_token}}"
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("HTTP 200", () => pm.response.to.have.status(200));
+      pm.test("Dashboard totals consistent", () => { const d=pm.response.json().data; pm.expect(d.submitted+d.pending).to.eql(d.expected); });
+    language: text/javascript
+order: 8000

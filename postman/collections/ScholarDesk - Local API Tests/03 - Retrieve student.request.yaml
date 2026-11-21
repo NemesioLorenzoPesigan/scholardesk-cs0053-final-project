@@ -1,0 +1,15 @@
+$kind: http-request
+url: "{{base_url}}/api.php?route=students&id={{student_id}}"
+method: GET
+headers:
+  Content-Type: application/json
+  X-CSRF-Token: "{{csrf_token}}"
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("HTTP 200", () => pm.response.to.have.status(200));
+      pm.test("Correct student", () => pm.expect(String(pm.response.json().data.id)).to.eql(String(pm.collectionVariables.get("student_id"))));
+      pm.collectionVariables.set("student_number", pm.response.json().data.student_number);
+      pm.collectionVariables.set("student_email", pm.response.json().data.email);
+    language: text/javascript
+order: 3000

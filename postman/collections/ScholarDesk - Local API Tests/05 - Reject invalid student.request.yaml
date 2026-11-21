@@ -1,0 +1,14 @@
+$kind: http-request
+url: "{{base_url}}/api.php?route=students"
+method: POST
+headers:
+  Content-Type: application/json
+  X-CSRF-Token: "{{csrf_token}}"
+body:
+  type: json
+  content: '{"student_number": "INVALID"}'
+scripts:
+  - type: afterResponse
+    code: pm.test("HTTP 422", () => pm.response.to.have.status(422));
+    language: text/javascript
+order: 5000

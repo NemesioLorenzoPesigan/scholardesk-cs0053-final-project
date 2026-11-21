@@ -1,0 +1,13 @@
+Observed functional browser checks, November 21, 2026:
+PASS | Empty dashboard and demo loading
+PASS | Add student through dialog; new record visible
+PASS | Edit student name; saved name visible
+PASS | Student search narrows directory to one matching record
+PASS | Mark work submitted; submitted total and filter update
+PASS | Create academic task with deadline and description
+PASS | Delete confirmation describes cascade; Cancel keeps record
+PASS | Browser reload keeps saved records
+PASS | Microsoft Edge displays the local application at 127.0.0.1:8053
+PASS | Stop/start launcher preserves 3 students, 3 tasks and 3 submissions
+Test-only UI and Postman fixtures were removed through the API; only fictional demo records remain.
+Not tested: full accessibility audit, large data volumes, multi-user concurrency, production deployment.

@@ -1,0 +1,7 @@
+Actual Postman desktop run, November 21, 2026, local mode.
+Requests selected: 01 through 09 (9 of 12).
+Assertions: 15 passed, 0 failed, 0 errors.
+Requests 10-12 were not selected in this Postman run.
+Temporary records were cleaned up afterward using direct local API calls.
+DELETE functionality is covered by tests/http_test.py; Postman DELETE screenshots remain a group submission step.
+Screenshot: postman-run.jpg

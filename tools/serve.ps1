@@ -22,4 +22,7 @@ try {
     }
     if(-not $ready) {throw 'The local server did not start. See tools/server-error.log.'}
 }
-Start-Process $localUrl
+$edgePath = 'C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe'
+if(Test-Path -LiteralPath $edgePath) {
+    Start-Process -FilePath $edgePath -ArgumentList '--new-window', $localUrl
+} else { Start-Process $localUrl }

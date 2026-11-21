@@ -1,0 +1,29 @@
+PASS | Session endpoint returns CSRF token
+PASS | Write without CSRF token is blocked
+PASS | Malformed JSON rejected
+PASS | Wrong content type rejected
+PASS | Blank required fields rejected
+PASS | Invalid email rejected
+PASS | POST creates student with 201
+PASS | GET retrieves new student
+PASS | Duplicate student rejected with 409
+PASS | GET search finds student
+PASS | Array query rejected
+PASS | Negative ID rejected
+PASS | Unknown ID returns 404
+PASS | PUT updates student
+PASS | POST creates task with 201
+PASS | PUT updates task
+PASS | GET submissions combines student and task
+PASS | PUT marks task submitted
+PASS | Dashboard reflects submitted work
+PASS | Invalid submission status rejected
+PASS | PUT restores pending status
+PASS | Unsupported method returns 405
+PASS | Unknown endpoint returns 404
+PASS | DELETE removes task
+PASS | DELETE removes student
+PASS | Deleted record is no longer available
+PASS | Database file is not accessible over HTTP
+
+27 passed; 0 failed

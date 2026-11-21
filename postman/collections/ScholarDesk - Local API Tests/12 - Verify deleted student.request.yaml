@@ -1,0 +1,11 @@
+$kind: http-request
+url: "{{base_url}}/api.php?route=students&id={{student_id}}"
+method: GET
+headers:
+  Content-Type: application/json
+  X-CSRF-Token: "{{csrf_token}}"
+scripts:
+  - type: afterResponse
+    code: pm.test("HTTP 404", () => pm.response.to.have.status(404));
+    language: text/javascript
+order: 12000
