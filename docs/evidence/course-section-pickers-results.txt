@@ -1,0 +1,17 @@
+ScholarDesk searchable dropdown verification — November 22, 2026
+Browser verification used http://127.0.0.1:8054 with a separate test database.
+PASS | New student form shows exactly 10 preset course suggestions.
+PASS | New student form shows exactly 10 preset section suggestions.
+PASS | Lowercase course search cs005 filters to CS0053.
+PASS | Clicking a course option selects CS0053 and closes the list.
+PASS | Section search se3 followed by ArrowDown and Enter selects SE31 without submitting.
+PASS | Student saved with CS0053 and SE31; both are visible after browser reload.
+PASS | Edit form retains the saved course and section.
+PASS | Unmatched query displays no-match guidance.
+PASS | Escape closes the dropdown while the edit dialog stays open.
+PASS | An older free-text value, BS Computer Science, saves and remains editable.
+PASS | Academic task course search selects CS0053 and saves with the new task.
+PASS | Browser error/warning log is empty at the verification checkpoint.
+Regression suites: 11 unit + 23 integration + 27 HTTP checks passed.
+Preview: course-section-pickers.jpg
+No production student/task records were changed by these browser checks.

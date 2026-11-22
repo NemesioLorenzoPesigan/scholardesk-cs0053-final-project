@@ -15,6 +15,7 @@ The launcher uses `C:\xampp\php\php.exe`. If XAMPP is elsewhere, edit `$phpPath`
 ## Features
 
 - Create, view, edit, delete, and search student records.
+- Searchable Program / course and Section dropdowns with 10 starter suggestions each from the group's supplied lists. Course suggestions also appear in academic task entry. Existing saved values and other codes remain editable.
 - Create, view, edit, delete, and search academic tasks and deadlines.
 - Automatically track every registered student against every task.
 - Mark submissions submitted or pending; past pending deadlines display as overdue.
@@ -23,6 +24,16 @@ The launcher uses `C:\xampp\php\php.exe`. If XAMPP is elsewhere, edit `$phpPath`
 - Local persistent database, responsive interface, keyboard focus, and confirmation dialogs.
 
 All tasks apply to all students. Adding a new student also makes existing tasks pending for that student. Pending totals include overdue work. Deadlines use Manila calendar dates and end at 11:59 PM. Submission monitoring records status and timestamp; file attachments are outside this project's scope.
+
+## Course and section suggestions
+
+Click a dropdown arrow to see suggestions, or type to filter them without regard to capitalization. Select an option with the mouse, or use Arrow Up/Down and Enter. Escape closes the suggestion list. You may also enter a different code; existing saved values appear when editing.
+
+Course suggestions: ALACC0013, CCS0001, CE0019, COE0003, CPE0005, CS0019, CS0045, CS0053, GED0027, IT0011.
+
+Section suggestions: AA11, AB21, AC31, AD21, AI21, AM31, DS31, ME21-A, SE31, SE32.
+
+The 10 starter entries in each list were selected from the user-supplied course/section lists; they are not a complete course catalog. Edit the lists in `public/assets/pickers.js` to add more suggestions. The supplied course codes are offered in the existing Program / course field and the task Subject / course code field.
 
 ## Database and backup
 

@@ -2,7 +2,7 @@
 header("Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'");
 header('X-Content-Type-Options: nosniff');
 ?><!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>ScholarDesk | Student & Task Management</title><link rel="icon" href="assets/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/style.css"><script src="assets/app.js" defer></script></head>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>ScholarDesk | Student & Task Management</title><link rel="icon" href="assets/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/style.css"><script src="assets/pickers.js" defer></script><script src="assets/app.js" defer></script></head>
 <body>
 <aside class="sidebar">
  <a class="brand" href="#dashboard"><span class="brand-icon">S</span><span>ScholarDesk<small>ACADEMIC WORKSPACE</small></span></a>

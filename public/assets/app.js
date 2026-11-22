@@ -75,14 +75,17 @@ function render() {
   if(search) search.addEventListener('input',event=>{state.query=event.target.value;const start=event.target.selectionStart;render();$('#search').focus();$('#search').setSelectionRange(start,start)});
   $('#status-filter')?.addEventListener('change',event=>{state.filter=event.target.value;render()});
 }
-const studentFields=[['student_number','Student number','text',30],['full_name','Full name','text',100],['email','Email address','email',150],['course','Program / course','text',80],['year_level','Year level','select'],['section','Section','text',30]];
-const taskFields=[['title','Task title','text',120],['subject','Subject / course code','text',80],['due_date','Deadline','date'],['description','Description (optional)','textarea',2000]];
+const studentFields=[['student_number','Student number','text',30],['full_name','Full name','text',100],['email','Email address','email',150],['course','Program / course','picker',80],['year_level','Year level','select'],['section','Section','picker',30]];
+const taskFields=[['title','Task title','text',120],['subject','Subject / course code','picker',80],['due_date','Deadline','date'],['description','Description (optional)','textarea',2000]];
 function openEditor(type,id=null) {
   const record=id?state[type].find(r=>r.id===id):{};
   state.editing={type,id};
   $('#editor-title').textContent=`${id?'Edit':'Add'} ${type==='students'?'student':'academic task'}`;
   $('#form-error').textContent='';
-  $('#form-fields').innerHTML=`<div class="form-grid">${(type==='students'?studentFields:taskFields).map(([name,label,field,max])=>`<label class="field${field==='textarea'?' wide':''}">${label}${field==='select'?`<select name="${name}">${[1,2,3,4,5,6].map(y=>`<option value="${y}" ${Number(record[name]||1)===y?'selected':''}>Year ${y}</option>`).join('')}</select>`:field==='textarea'?`<textarea name="${name}" maxlength="${max}">${escapeHTML(record[name])}</textarea>`:`<input name="${name}" type="${field}" ${max?`maxlength="${max}"`:''} value="${escapeHTML(record[name])}" required>`}</label>`).join('')}</div>`;
+  $('#form-fields').innerHTML=`<div class="form-grid">${(type==='students'?studentFields:taskFields).map(([name,label,field,max])=>field==='picker'
+    ? ScholarDeskPickers.field(name,label,record[name],max)
+    : `<label class="field${field==='textarea'?' wide':''}">${label}${field==='select'?`<select name="${name}">${[1,2,3,4,5,6].map(y=>`<option value="${y}" ${Number(record[name]||1)===y?'selected':''}>Year ${y}</option>`).join('')}</select>`:field==='textarea'?`<textarea name="${name}" maxlength="${max}">${escapeHTML(record[name])}</textarea>`:`<input name="${name}" type="${field}" ${max?`maxlength="${max}"`:''} value="${escapeHTML(record[name])}" required>`}</label>`).join('')}</div>`;
+  ScholarDeskPickers.mount($('#form-fields'),state.students);
   $('#editor').showModal();
 }
 async function confirmDelete(type,id) {
